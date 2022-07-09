@@ -1,5 +1,5 @@
 {
-    "name": "lifehacks",
+    "name": "lildbatools",
     "workspaceFolder": "/workspace",
     "dockerComposeFile": [
         "docker-compose.yml"
