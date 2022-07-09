@@ -1,4 +1,10 @@
-# Installing and updating the dbatools module
+<#
+-------------------------------------
+Automating SQL Server with dbatools
+-------------------------------------
+01-02 - Installing and updating the module
+-------------------------------------
+#>
 
 # Find the dbatools on the PowerShell Gallery
 Find-Module dbatools
