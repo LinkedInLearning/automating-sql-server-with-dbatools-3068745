@@ -2,7 +2,7 @@
 -------------------------------------
 Automating SQL Server with dbatools
 -------------------------------------
-01_03 - Find the command you need
+01-03 - Find the command you need
 -------------------------------------
 #>
 
