@@ -2,7 +2,7 @@
 -------------------------------------
 Automating SQL Server with dbatools
 -------------------------------------
-01_04 - Running your first command
+01-04 - Running your first command
 -------------------------------------
 #>
 
