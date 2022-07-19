@@ -2,6 +2,6 @@
 -------------------------------------
 Automating SQL Server with dbatools
 -------------------------------------
-02-04 - Review SQL Server Configuration Settings
+02-04 - Get SQL Server patch levels
 -------------------------------------
 #>
