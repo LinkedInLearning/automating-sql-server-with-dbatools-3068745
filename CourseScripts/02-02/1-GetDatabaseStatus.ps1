@@ -13,10 +13,10 @@ Find-DbaCommand -Pattern *database*status*
 Get-Help Get-DbaDbState -Full
 
 # Run Get-DbaDbState
-Get-DbaDbState -SqlInstance $dbatools1
+Get-DbaDbState -SqlInstance $SQLinstances
 
 # Run Get-DbaDbState with selected columns
-Get-DbaDbState -SqlInstance $dbatools1 | Select-Object SqlInstance, DatabaseName, Status, RW, Access | Format-Table 
+Get-DbaDbState -SqlInstance $SQLinstances | Select-Object SqlInstance, DatabaseName, Status, RW, Access | Format-Table 
 
 # Find a command that matches the pattern of *database*status*
 Find-DbaCommand -Pattern *database*status*
