@@ -33,3 +33,6 @@ Get-DbaDatabase -SqlInstance $SQLInstances -ExcludeSystem | Select-Object SqlIns
 
 # Remove the databases from dbatools2 ready for the next video
 Get-DbaDatabase -SqlInstance dbatools2 -ExcludeSystem | Remove-DbaDatabase -Confirm:$false
+
+# Set the databases on dbatools1 back online
+Get-DbaDatabase -SqlInstance dbatools1 -Status Offline | Set-DbaDbState -Online
