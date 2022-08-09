@@ -14,7 +14,12 @@ $datatbaseSplat = @{
 Get-DbaDatabase @datatbaseSplat | Select-Object SqlInstance, Name, Status
 
 # Set a database offline
-Set-DbaDbState -SqlInstance dbatools1 -Database Northwind, Pubs -Offline
+$offlineSplat = @{
+    SqlInstance   = 'dbatools1'
+    Database      = 'Northwind', 'Pubs'
+    Offline = $true
+}
+Set-DbaDbState @offlineSplat
 
 # View current database status
 $datatbaseSplat = @{
@@ -24,7 +29,12 @@ $datatbaseSplat = @{
 Get-DbaDatabase @datatbaseSplat | Select-Object SqlInstance, Name, Status
 
 # Set a database online
-Set-DbaDbState -SqlInstance dbatools1 -Database Northwind -Online
+$onlineSplat = @{
+    SqlInstance   = 'dbatools1'
+    Database      = 'Northwind'
+    Online = $true
+}
+Set-DbaDbState @onlineSplat
 
 # View current database status
 $datatbaseSplat = @{
