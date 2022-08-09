@@ -45,3 +45,6 @@ $compressDb = @{
     CompressionType = 'Page'
 }
 Set-DbaDbCompression @compressDb
+
+# Review the help for more parameters
+Get-Help Set-DbaDbCompression -Full
