@@ -6,14 +6,6 @@ Automating SQL Server with dbatools
 -------------------------------------
 #>
 
-<#
--------------------------------------
-Automating SQL Server with dbatools
--------------------------------------
-04-02 - Simple database migrations
--------------------------------------
-#>
-
 # view the databases
 Get-DbaDatabase -SqlInstance $SQLInstances -ExcludeSystem | Select-Object SqlInstance, Name, Status, SizeMB
 
