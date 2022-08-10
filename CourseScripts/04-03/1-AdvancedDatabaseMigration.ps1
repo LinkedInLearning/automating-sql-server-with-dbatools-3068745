@@ -17,7 +17,7 @@ Automating SQL Server with dbatools
 # view the databases
 Get-DbaDatabase -SqlInstance $SQLInstances -ExcludeSystem | Select-Object SqlInstance, Name, Status, SizeMB
 
-# copy all databases from dbatools1 --> dbatools2
+# copy Northwind database from dbatools1 --> dbatools2 but with NORECOVERY
 $copySplat = @{
     Source = 'dbatools1'
     Destination = 'dbatools2'
@@ -40,14 +40,23 @@ Invoke-DbaQuery -SqlInstance dbatools1 -Database Northwind -Query "insert into C
 # Transaction log backup
 Backup-DbaDatabase -SqlInstance dbatools1 -Database Northwind -Type Log -Path /shared/northwind_migrate.trn
 
-# Restore that transaction log backup
-Restore-DbaDatabase
+# Final copy that uses the last log backup and sets the source offline
+$copyPartTwoSplat = @{
+    Source = 'dbatools1'
+    Destination = 'dbatools2'
+    BackupRestore = $true
+    Database = 'Northwind'
+    SetSourceOffline = $true
+    UseLastBackup = $true
+    Continue = $true
+}
+Copy-DbaDatabase @copyPartTwoSplat
 
-# copy all databases from dbatools1 --> dbatools2 & set source offline
-Copy-DbaDatabase @copySplat -SetSourceOffline
+# View the categories
+Invoke-DbaQuery -SqlInstance dbatools2 -Database Northwind -Query 'select CategoryName, Description from categories'
 
 # view the databases
 Get-DbaDatabase -SqlInstance $SQLInstances -ExcludeSystem | Select-Object SqlInstance, Name, Status, SizeMB
 
-# Remove the databases from dbatools2 ready for the next video
-Get-DbaDatabase -SqlInstance dbatools2 -ExcludeSystem | Remove-DbaDatabase -Confirm:$false
+# Bring the database back online on dbatools1 ready for the next video
+Set-DbaDbState -SqlInstance dbatools1 -Database Northwind -Online
