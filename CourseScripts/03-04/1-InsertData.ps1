@@ -18,7 +18,7 @@ Get-DbaDatabase -SqlInstance $SqlInstances |
 Select-Object SqlInstance, Name, Owner, Status, LastFullBackup |
 Write-DbaDataTable @writeSplat -Table DatabaseInfo -AutoCreateTable
 
-# show ssms selcet & structure of table
+# show ssms select & structure of table
 
 # We can also create the table first & load into it
 Import-Csv -Path ./CourseScripts/03-04/Customers.csv |
@@ -28,6 +28,7 @@ Write-DbaDataTable @writeSplat -Table Customers
 Import-Csv -Path ./CourseScripts/03-04/Customers.csv |
 Write-DbaDataTable @writeSplat -Table Customers -Truncate
 
+# Improved performance for larger datasets
 # Use the BatchSize parameter to load in differnet batches (defaul 50,000)
-Import-Csv -Path ./CourseScripts/03-04/Customers.csv |
-Write-DbaDataTable @writeSplat -Table Customers -Truncate -BatchSize 1000
+$data = Import-Csv -Path ./CourseScripts/03-04/Customers.csv
+Write-DbaDataTable @writeSplat -Table Customers -InputObject $data -Truncate -BatchSize 1000
