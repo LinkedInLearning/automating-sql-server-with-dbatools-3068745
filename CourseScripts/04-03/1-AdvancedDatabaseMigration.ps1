@@ -7,7 +7,8 @@ Automating SQL Server with dbatools
 #>
 
 # view the databases
-Get-DbaDatabase -SqlInstance $SQLInstances -ExcludeSystem | Select-Object SqlInstance, Name, Status, SizeMB
+Get-DbaDatabase -SqlInstance $SQLInstances -ExcludeSystem |
+Select-Object SqlInstance, Name, Status, SizeMB
 
 # copy Northwind database from dbatools1 --> dbatools2 but with NORECOVERY
 $copySplat = @{
@@ -21,7 +22,8 @@ $copySplat = @{
 Copy-DbaDatabase @copySplat
 
 # view the databases
-Get-DbaDatabase -SqlInstance $SQLInstances -ExcludeSystem | Select-Object SqlInstance, Name, Status, SizeMB
+Get-DbaDatabase -SqlInstance $SQLInstances -ExcludeSystem |
+Select-Object SqlInstance, Name, Status, SizeMB
 
 # View the categories
 Invoke-DbaQuery -SqlInstance dbatools1 -Database Northwind -Query 'select CategoryName, Description from categories'
@@ -44,11 +46,12 @@ $copyPartTwoSplat = @{
 }
 Copy-DbaDatabase @copyPartTwoSplat
 
+# view the databases
+Get-DbaDatabase -SqlInstance $SQLInstances -ExcludeSystem |
+Select-Object SqlInstance, Name, Status, SizeMB
+
 # View the categories
 Invoke-DbaQuery -SqlInstance dbatools2 -Database Northwind -Query 'select CategoryName, Description from categories'
-
-# view the databases
-Get-DbaDatabase -SqlInstance $SQLInstances -ExcludeSystem | Select-Object SqlInstance, Name, Status, SizeMB
 
 # Bring the database back online on dbatools1 ready for the next video
 Set-DbaDbState -SqlInstance dbatools1 -Database Northwind -Online
