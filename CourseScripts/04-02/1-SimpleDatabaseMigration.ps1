@@ -7,7 +7,8 @@ Automating SQL Server with dbatools
 #>
 
 # view the databases
-Get-DbaDatabase -SqlInstance $SQLInstances -ExcludeSystem | Select-Object SqlInstance, Name, Status, SizeMB
+Get-DbaDatabase -SqlInstance $SQLInstances -ExcludeSystem |
+Select-Object SqlInstance, Name, Status, SizeMB
 
 # copy all databases from dbatools1 --> dbatools2
 $copySplat = @{
@@ -20,19 +21,24 @@ $copySplat = @{
 Copy-DbaDatabase @copySplat
 
 # view the databases
-Get-DbaDatabase -SqlInstance $SQLInstances -ExcludeSystem | Select-Object SqlInstance, Name, Status, SizeMB
+Get-DbaDatabase -SqlInstance $SQLInstances -ExcludeSystem |
+Select-Object SqlInstance, Name, Status, SizeMB
 
 # Remove the databases from dbatools2
-Get-DbaDatabase -SqlInstance dbatools2 -ExcludeSystem | Remove-DbaDatabase -Confirm:$false
+Get-DbaDatabase -SqlInstance dbatools2 -ExcludeSystem |
+Remove-DbaDatabase -Confirm:$false
 
 # copy all databases from dbatools1 --> dbatools2 & set source offline
 Copy-DbaDatabase @copySplat -SetSourceOffline
 
 # view the databases
-Get-DbaDatabase -SqlInstance $SQLInstances -ExcludeSystem | Select-Object SqlInstance, Name, Status, SizeMB
+Get-DbaDatabase -SqlInstance $SQLInstances -ExcludeSystem |
+Select-Object SqlInstance, Name, Status, SizeMB
 
 # Remove the databases from dbatools2 ready for the next video
-Get-DbaDatabase -SqlInstance dbatools2 -ExcludeSystem | Remove-DbaDatabase -Confirm:$false
+Get-DbaDatabase -SqlInstance dbatools2 -ExcludeSystem |
+Remove-DbaDatabase -Confirm:$false
 
 # Set the databases on dbatools1 back online
-Get-DbaDatabase -SqlInstance dbatools1 -Status Offline | Set-DbaDbState -Online
+Get-DbaDatabase -SqlInstance dbatools1 -Status Offline |
+Set-DbaDbState -Online
