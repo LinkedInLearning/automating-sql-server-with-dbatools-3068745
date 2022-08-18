@@ -6,7 +6,6 @@ Automating SQL Server with dbatools
 -------------------------------------
 #>
 
-
 # Get information about a certain build
 Connect-DbaInstance -SqlInstance dbatools1
 Get-DbaBuild -Build "15.0.4198"
@@ -18,11 +17,11 @@ Get-DbaBuild -SqlInstance $SQLInstances | Format-Table
 # https://dbatools.io/build
 
 # Are we on the latest build?
-Test-DbaBuild -SqlInstance $SQLInstances -Latest | 
-Select-Object SqlInstance, Build, BuildTarget, NameLevel, SPLevel, CULevel, KBLevel, Compliant, SupportedUntil | 
+Test-DbaBuild -SqlInstance $SQLInstances -Latest |
+Select-Object SqlInstance, Build, BuildTarget, NameLevel, SPLevel, CULevel, KBLevel, Compliant, SupportedUntil |
 Format-Table
 
 # Are we within 1CU
-Test-DbaBuild -SqlInstance $SQLInstances -MaxBehind 1CU | 
-Select-Object SqlInstance, Build, BuildTarget, NameLevel, SPLevel, CULevel, KBLevel, Compliant, SupportedUntil | 
+Test-DbaBuild -SqlInstance $SQLInstances -MaxBehind 1CU |
+Select-Object SqlInstance, Build, BuildTarget, NameLevel, SPLevel, CULevel, KBLevel, Compliant, SupportedUntil |
 Format-Table
