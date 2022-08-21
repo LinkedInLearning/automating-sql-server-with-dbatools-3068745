@@ -1,7 +1,11 @@
 version: "3"
 services:
     dbatools1:
+<<<<<<< Updated upstream
+      image: jpomfret7/lildbatools:latest
+=======
       image: jpomfret7/lildbatools:v0.13.0
+>>>>>>> Stashed changes
       volumes:
         - mydata:/var/opt/backups
         - shared:/shared
@@ -13,7 +17,11 @@ services:
       hostname: dbatools1
 
     dbatools2:
+<<<<<<< Updated upstream
+      image: jpomfret7/lildbatools2:latest
+=======
       image: jpomfret7/lildbatools2:v0.13.0
+>>>>>>> Stashed changes
       volumes:
         - mydata:/var/opt/backups
         - shared:/shared
