@@ -10,11 +10,11 @@ Automating SQL Server with dbatools
 Get-DbaLogin -SqlInstance dbatools1 |
 Select-Object SqlInstance, Name, LoginType
 
-# View the database users for pubs
+# View the database users for Northwind
 Get-DbaDbUser -SqlInstance dbatools1 -Database Northwind -ExcludeSystemUser |
 Select-Object SqlInstance, Database, Name, Login
 
-# View the database users for pubs
+# View the database users for Northwind
 Get-DbaDbUser -SqlInstance dbatools2 -Database Northwind -ExcludeSystemUser |
 Select-Object SqlInstance, Database, Name, Login
 
