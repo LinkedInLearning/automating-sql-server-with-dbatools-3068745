@@ -7,7 +7,7 @@ Automating SQL Server with dbatools
 #>
 
 # Check the help docs
-Get-Help Start-DbaMigration
+Get-Help Start-DbaMigration -Online
 
 # Migrate everything from dbatools1 to dbatools2
 $migrateSplat = @{
