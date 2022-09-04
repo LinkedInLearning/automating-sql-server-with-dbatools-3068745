@@ -10,7 +10,7 @@ Automating SQL Server with dbatools
 Get-Command *configure* -Module dbatools
 
 # Get all configuration items
-Get-DbaSpConfigure -SqlInstance $SQLInstances | Out-ConsoleGridView
+Get-DbaSpConfigure -SqlInstance $SQLInstances | Format-Table
 
 # Get just specific configuration items
 Get-DbaSpConfigure -SqlInstance dbatools1 -Name 'MaxServerMemory','AdHocDistributedQueriesEnabled'
