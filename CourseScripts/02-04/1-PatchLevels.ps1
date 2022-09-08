@@ -8,7 +8,7 @@ Automating SQL Server with dbatools
 
 # Get information about a certain build
 Connect-DbaInstance -SqlInstance dbatools1
-Get-DbaBuild -Build "15.0.4198"
+Get-DbaBuild -Build "15.0.4249"
 
 # Get build information for your Sql instances
 Get-DbaBuild -SqlInstance $SQLInstances | Format-Table
