@@ -7,7 +7,9 @@ Automating SQL Server with dbatools
 #>
 
 # View all our SQL agent jobs
-Get-DbaAgentJob -SqlInstance $SqlInstances | Format-Table
+Get-DbaAgentJob -SqlInstance $SqlInstances | 
+Select-Object SqlInstance, Name, Category, LastRunDate, LastRunOutcome |
+Format-Table
 
 # View SQL Agent jobs where the LastRunOutcome was not successful or unknown
 Get-DbaAgentJob -SqlInstance $SqlInstances  | Where-Object LastRunOutcome -notin ('Succeeded','Unknown') -OutVariable Failed
