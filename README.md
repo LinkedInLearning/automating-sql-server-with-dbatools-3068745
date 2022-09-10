@@ -38,7 +38,7 @@ To resolve this issue:
     cd C:\GitHub\
 
     # clone the repo from GitHub
-    git clone https://github.com/SQLDBAWithABeard/Bitsdbatools
+    git clone https://github.com/LinkedInLearning/automating-sql-server-with-dbatools-3068745.git
 
     # move into the folder
     cd .\Bitsdbatools\
