@@ -6,6 +6,9 @@ Automating SQL Server with dbatools
 -------------------------------------
 #>
 
+# Update the build reference so it's got the latest information
+Get-DbaBuildReference -Update
+
 # Get information about a certain build
 Connect-DbaInstance -SqlInstance dbatools1
 Get-DbaBuild -Build "15.0.4249"
