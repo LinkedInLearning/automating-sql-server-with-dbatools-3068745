@@ -19,4 +19,4 @@ Get-Help Test-DbaDbCompression -Online
 Get-Help Test-DbaDbCompression -Examples
 
 # Using one of the examples from the Test-DbaDbCompression help
-Test-DbaDbCompression -SqlInstance $dbatools1
+Test-DbaDbCompression -SqlInstance dbatools1
