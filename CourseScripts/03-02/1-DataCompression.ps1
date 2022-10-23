@@ -6,7 +6,7 @@ Automating SQL Server with dbatools
 -------------------------------------
 #>
 
-# Find th compression commands
+# Find the compression commands
 Get-Command *compression* -Module dbatools
 
 # Get compression levels orders
