@@ -22,4 +22,4 @@ Install-Module dbatools -Scope AllUsers
 Save-Module dbatools -Path c:\temp\dbatools
 
 # Where do modules get saved?
-$env:PSModulePath.split(';')
+$env:PSModulePath.split(':')
