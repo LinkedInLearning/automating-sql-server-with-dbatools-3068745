@@ -1,8 +1,6 @@
 # Automating SQL Server with dbatools
 This is the repository for the LinkedIn Learning course Automating SQL Server with dbatools. The full course is available from [LinkedIn Learning][lil-course-url].
 
-![Automating SQL Server with dbatools][lil-thumbnail-url] 
-
 If you want to learn more about automating SQL Server, you’ve come to the right place. Did you know you can use the open-source PowerShell module dbatools to manage your SQL Server estate? In this course, instructor Jess Pomfret covers the skills you need to know to automate SQL Server with dbatools, helping you optimize your workflow, database performance, and overall server management experience.
 
 Learn about the history of dbatools and why it should become one your trusted go-to tools, as Jess shows you how dbatools can accomplish most of the tasks available in SQL Server Management Studio. Find out how to handle multiple instances, databases, and logins at the same time, as well as gather and set information, change configurations, and migrate instances. Upon completing this course, you’ll be prepared to keep building on your new skills so you can become a more effective and efficient database administrator.
